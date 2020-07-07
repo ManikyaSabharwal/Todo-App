@@ -27,8 +27,8 @@ function renderTodo(todo) {
     <hr>
     <ul style="list-style-type:none;">
     </ul>
-    <p class = 'btn-add' style="display: inline;" onclick="toggleAddItem(this)"><i class="fa fa-plus-circle"></i></p>
     <button class='btn-completed' onclick="removeToDo(this)">Completed</button> 
+    <p class = 'btn-add' style="display: inline;" onclick="toggleAddItem(this)"><i class="fa fa-plus-circle"></i></p>
     `;
     
     console.log(node);
