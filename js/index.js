@@ -2,7 +2,21 @@ let todoItems = [];
 
 let currentChange;
 
+function initialisation () {
+console.log(todoItems.length);
+  if(todoItems.length === 0) {
+    console.log(document.getElementById('noTodo'))
+    document.getElementById('noTodo').style.display = "block";
+  } else {
+    console.log('inside');
+    document.getElementById('noTodo').style.display = "none";
+  }
+}
+
+initialisation();
+
 function renderTodo(todo) {
+  initialisation();
     const list = document.querySelector('.flex-row-list');
   
     const isChecked = todo.checked ? 'card-item-checked': '';
@@ -16,15 +30,6 @@ function renderTodo(todo) {
     <p class = 'btn-add' style="display: inline;" onclick="toggleAddItem(this)"><i class="fa fa-plus-circle"></i></p>
     <button class='btn-completed' onclick="removeToDo(this)">Completed</button> 
     `;
-    // <p class="card-heading">Trip To Paris</p>
-    // <hr>
-    // <ul style="list-style-type:none;">
-    //     <li class="card-item card-item-checked">Completed Task </li>
-    //     <li class="card-item">Pending Task <i class="fa fa-check" aria-hidden="true" onclick="markCompleted(this)"></i></li>
-    // </ul>  
-    //     <p class = 'btn-add' style="display: inline;" onclick="toggleAddItem(this)"><i class="fa fa-plus-circle"></i></p>
-    //     <button class='btn-completed' onclick="removeToDo(this)">Completed</button>
-    
     
     console.log(node);
     list.append(node);
@@ -60,13 +65,14 @@ function renderTodo(todo) {
     node.innerHTML = `${taskHeading}<i class="fa fa-check" aria-hidden="true" onclick="markCompleted(this)"></i>
     `;
   
-    // console.log(list[5]);
     list.append(node);
   }
 
   function removeToDo(element) {
     let tempElement = element.parentNode;
     tempElement.parentNode.removeChild(tempElement);
+    todoItems.pop();
+    initialisation();
   }
 
 function toggle() {
