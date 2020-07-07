@@ -29,15 +29,12 @@ function renderTodo(todo) {
     </ul>
     <button class='btn-completed' onclick="removeToDo(this)">Completed</button> 
     <p class = 'btn-add' style="display: inline;" onclick="toggleAddItem(this)"><i class="fa fa-plus-circle"></i></p>
-    
     `;
     
-    console.log(node);
     list.append(node);
   }
 
   function markCompleted(element) {
-    console.log(element.parentNode);
     element.parentNode.setAttribute('class', 'card-item card-item-checked');
     element. parentNode. removeChild(element);
   }
@@ -59,7 +56,6 @@ function renderTodo(todo) {
   function addSubTodo() {
     let taskHeading = document.getElementById('subListHeading').value;
     let list = currentChange.parentNode.childNodes[4];
-    console.log(currentChange.parentNode.childNodes);
     const node = document.createElement("li");
     node.setAttribute('class', `card-item`);
     node.setAttribute('data-key', Date.now());
@@ -90,7 +86,5 @@ function toggleAddItem(item) {
   blur.classList.toggle("active");
 
   var popup = document.getElementById("popAddItem");
-  console.log(popup);
-
   popup.classList.toggle("active");
 }
