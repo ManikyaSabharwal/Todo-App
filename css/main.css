@@ -296,7 +296,6 @@ button:focus {
   }
   .card {
     min-height: 1px;
-    cursor: pointer;
   }
   .card-item {
     display: none;
