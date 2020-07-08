@@ -140,15 +140,21 @@ function redirect(element) {
   document.getElementById('currentHeading').textContent = currentTodo.heading;
   document.getElementById('currentHeading-1').textContent = currentTodo.heading;
 
+  // console.log(currentTodo);
   let e = document.getElementById('singleList');
-  for(let i = 0; i < currentTodo.subTask.lenght; i++) {
+  var child = e.lastElementChild;  
+  while (child) { 
+      e.removeChild(child); 
+      child = e.lastElementChild; 
+  } 
+  for(let i = 0; i < currentTodo.subTask.length; i++) {
     const node = document.createElement("li");
       node.setAttribute('class', `card-item-2`);
       node.setAttribute('data-key', Date.now());
-      node.innerHTML = ` ${taskHeading}<button class = 'markDone' onclick="markCompleted(this)">Mark Done</button>`;
+      node.innerHTML = ` ${currentTodo.subTask[i]}<button class = 'markDone' onclick="markCompleted(this)">Mark Done</button>`;
       e.append(node);
   }
-  console.log(e);
+  // console.log(e);
   // document.getElementsByClassName('card-item').style.display = 'block';
   // document.getElementsByClassName('footer').style.display = 'block';
 }
