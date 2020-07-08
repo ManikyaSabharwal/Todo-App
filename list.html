@@ -11,18 +11,19 @@
     <body>
         <div class="container" id="blur">
             <div class="flex-row">
-                    <p><i class="fa fa-chevron-circle-left"></i> Back</p>
-                    <p class="heading-bold">Trip to Paris</p>
-                    <p onclick="toggle()"><i class="fa fa-plus-circle"></i> Add Todo</p>
+                    <p><i class="fa fa-chevron-circle-left" ></i> Back</p>
+                    <p class="heading-bold" id='currentHeading'>Trip to Paris</p>
+                    <p class='btn' onclick="toggle()"><i class="fa fa-plus-circle"></i> Add Item</p>
             </div>
             <div class="flex-row-center">
                 <div class="list-card">
-                    <p class="card-heading">Trip To Paris</p>
-                    <hr>
+                    <p class="card-heading" id='currentHeading-1'>Trip To Paris</p>
                     <ul style="list-style-type:none;">
-                        <li class="card-item card-item-checked">Completed Task</li>
-                        <li class="card-item">Pending Task</li>
                     </ul>  
+                    <div class='footer'>
+                        <button class='btn-completed' onclick="removeToDo(this)"><i class="fa fa-trash" aria-hidden="true"></i></button> 
+                        <p class = 'btn-add' onclick="toggleAddItem(this)"><i class="fa fa-plus-circle"></i></p>
+                    </div>
                 </div>
             </div>
         </div>
