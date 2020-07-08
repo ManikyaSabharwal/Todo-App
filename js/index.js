@@ -103,8 +103,8 @@ function renderTodo(todo) {
         id: Date.now(),
       };
       todoItems.push(todo);
-      renderTodo(todo);
       toggle();
+      goBack();
     }
   }
 
@@ -157,7 +157,12 @@ function renderTodo(todo) {
   }
 
 function toggle() {
-  var blur = document.getElementById("blur");
+  var blur;
+  if(flag) {
+    blur = document.getElementById("blur");
+  } else {
+    blur = document.getElementById("blur-2");
+  }
   blur.classList.toggle("active");
 
   var popup = document.getElementById("pop");
@@ -166,7 +171,12 @@ function toggle() {
 
 function toggleAddItem(item) {
   currentChange = item;
-  var blur = document.getElementById("blur");
+  var blur;
+  if(flag) {
+    blur = document.getElementById("blur");
+  } else {
+    blur = document.getElementById("blur-2");
+  }
   blur.classList.toggle("active");
 
   var popup = document.getElementById("popAddItem");
@@ -215,7 +225,6 @@ function redirect(element) {
 }
 function goBack() {
   flag = true;
-  initialisation();
   renderTodo();
 
   // console.log('Here');
