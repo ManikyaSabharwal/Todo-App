@@ -3,7 +3,6 @@ let todoItems = [];
 let currentChange;
 let flag = true;
 
-
 function initialisation() {
   if (flag) {
     document.getElementById("blur-2").style.display = "none";
@@ -20,8 +19,6 @@ function initialisation() {
     console.log("inside");
     document.getElementById("noTodo").style.display = "none";
   }
-  // todoItems = JSON.parse(window.localStorage.getItem('todoItems'));
-  // window.localStorage.setItem('todoItems', JSON.stringify(todoItems));
 }
 
 initialisation();
@@ -64,25 +61,13 @@ function renderTodo(todo) {
       node.childNodes[2].append(liNode);
     }
   }
-
-  // const isChecked = todo.checked ? 'card-item-checked': '';
-  // const node = document.createElement("div");
-  // node.setAttribute('class', `card`);
-  // node.setAttribute('data-key', todo.id);
-  // node.innerHTML = `<p class="card-heading" onclick="redirect(this)">${todo.heading}</p>
-  // <ul style="list-style-type:none;">
-  // </ul>
-  // <div class='footer'>
-  //     <button class='btn-completed' onclick="removeToDo(this)"><i class="fa fa-trash" aria-hidden="true"></i></button>
-  //     <p class = 'btn-add' onclick="toggleAddItem(this)"><i class="fa fa-plus-circle"></i></p>
-  // </div>
-  // `;
-
-  // list.append(node);
 }
 
 function markCompleted(element) {
-  element.parentNode.setAttribute("class", "card-item card-item-checked");
+  let classToPut = flag
+    ? "card-item card-item-checked"
+    : "card-item-2 card-item-checked";
+  element.parentNode.setAttribute("class", classToPut);
   let id = element.parentNode.parentNode.parentNode.getAttribute("data-key");
   let subTaskId = element.parentNode.getAttribute("data-key");
 
@@ -205,10 +190,6 @@ function redirect(element) {
       currentTodo = todoItems[i];
     }
   }
-  // window.location = '../list.html';
-  // window.navigate("../list.html")
-  // window.history.pushState("object or string", "Page Title", "/list.html");
-  // window.history.replaceState("object or string", "Page Title 2", "/list.html");
   flag = false;
   initialisation();
   document.getElementById("currentHeading").textContent = currentTodo.heading;
@@ -237,15 +218,8 @@ function redirect(element) {
     node.innerHTML = ` ${currentTodo.subTask[i].name} ${rest}`;
     e.append(node);
   }
-  // console.log(e);
-  // document.getElementsByClassName('card-item').style.display = 'block';
-  // document.getElementsByClassName('footer').style.display = 'block';
 }
 function goBack() {
   flag = true;
   renderTodo();
-
-  // console.log('Here');
-  // document.getElementsByClassName('card-item').style.display = 'none';
-  // document.getElementsByClassName('footer').style.display = 'none';
 }
