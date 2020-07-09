@@ -29,7 +29,7 @@ body {
 }
 
 .fa-plus-circle {
-  color: #e74c3c;
+  color: #4b8ce8;
   cursor: pointer;
 }
 
@@ -69,12 +69,11 @@ body {
   justify-content: space-between;
 }
 
-
 .markDone {
   font-size: 10px;
   height: 20px;
   width: auto;
-  background-color: #0040af;
+  background-color: #4b8ce8;
 }
 
 .card-heading {
@@ -82,29 +81,29 @@ body {
   font-size: 0.7em;
   color: #e74c3c;
   margin-bottom: 0px;
-  position:relative;
+  position: relative;
 }
 
-.card-heading::after{
+.card-heading::after {
   content: "";
-     position: absolute;
-     margin-top: 11px;
-     border-top-left-radius: 10px;
-     border-bottom-left-radius: 10px;
-     background-color: #000000;
-     position: absolute;
-     height: 1px;
-     width: 100%;
-     top: 30px;
-     left: 2%;
-     margin-left: -5px;
-  }
+  position: absolute;
+  margin-top: 11px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #000000;
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  top: 30px;
+  left: 2%;
+  margin-left: -5px;
+}
 
 .card-item {
   font-size: 0.6em;
   font-weight: 400;
   margin-bottom: 7px;
-  color: #34343b
+  color: #34343b;
 }
 
 .card-item-2 {
@@ -327,33 +326,32 @@ button:focus {
   .addItem {
     display: none;
   }
-  
-.popup {
-  position: fixed;
-  top: 40%;
-  left: 10%;
-  width: 300px;
-  height: 200px;
-}
-.popup-text {
-  font-size: 20px;
-  font-weight: 400;
-  color: #ff0000;
-  margin: 10px;
-}
 
-button {
-  width: 60px;
-  height: 33px;
-  font-size: 0.5em;
-}
-input {
-  width: 220px;
-  height: 35px;
-}
-#currentHeading {
-  font-size: 28px;
-  color: #4b4646
-}
-  
+  .popup {
+    position: fixed;
+    top: 40%;
+    left: 10%;
+    width: 300px;
+    height: 200px;
+  }
+  .popup-text {
+    font-size: 20px;
+    font-weight: 400;
+    color: #ff0000;
+    margin: 10px;
+  }
+
+  button {
+    width: 60px;
+    height: 33px;
+    font-size: 0.5em;
+  }
+  input {
+    width: 220px;
+    height: 35px;
+  }
+  #currentHeading {
+    font-size: 28px;
+    color: #4b4646;
+  }
 }
