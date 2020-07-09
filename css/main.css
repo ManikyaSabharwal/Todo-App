@@ -103,6 +103,7 @@ body {
   font-size: 0.6em;
   font-weight: 400;
   margin-bottom: 7px;
+  color: #34343b
 }
 
 .card-item-2 {
@@ -301,14 +302,20 @@ button:focus {
     content: none;
   }
   .card {
-    min-height: 1px;
+    min-height: 40px;
+    width: 100%;
+    border: 1px solid #ccc9c9;
   }
   .card-item {
     display: none;
   }
   .card-heading {
+    font-size: 25px;
     height: 10px;
     cursor: pointer;
+    color: #6a6a72;
+    justify-content: flex-start;
+    text-align: center;
   }
   .card-heading::after {
     width: 0;
@@ -316,5 +323,36 @@ button:focus {
   .footer {
     display: none;
   }
+  .addItem {
+    display: none;
+  }
+  
+.popup {
+  position: fixed;
+  top: 40%;
+  left: 10%;
+  width: 300px;
+  height: 200px;
+}
+.popup-text {
+  font-size: 20px;
+  font-weight: 400;
+  color: #ff0000;
+  margin: 10px;
+}
+
+button {
+  width: 60px;
+  height: 33px;
+  font-size: 0.5em;
+}
+input {
+  width: 220px;
+  height: 35px;
+}
+#currentHeading {
+  font-size: 28px;
+  color: #4b4646
+}
   
 }
